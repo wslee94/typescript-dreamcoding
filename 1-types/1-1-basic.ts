@@ -36,13 +36,14 @@
   let anything: any = 0;
   anything = "hello";
 
-  // void
+  // void: 함수의 리턴 값이 undefined 이다.
   function print(): void {
     console.log("hello");
+    return;
   }
   let unusable: void = undefined; // 💩
 
-  // never: 함수에 리턴 값이 없다. void는 return undefined;가 생략된 경우임
+  // never: 함수에 리턴 값이 없다. void는 return;이 생략된 경우임
   function throwError(message: string): never {
     // message -> server (log)
     throw new Error(message);
@@ -51,7 +52,7 @@
   }
   let neverEnding: never; // 💩
 
-  // object: 원시 타입을 제외한 모든 타입이 가능함
+  // object: 💩 원시 타입을 제외한 모든 타입이 가능함, 타입은 가능한 최대한 구체적으로 정의해야함
   let obj: object;
   function acceptSomeObject(obj: object) {}
   acceptSomeObject({ name: "wslee" });
