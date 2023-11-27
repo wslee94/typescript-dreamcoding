@@ -43,7 +43,7 @@
     constructor(
       private firstName: string,
       private lastName: string,
-      private internalAge: number
+      private _age: number
     ) {}
 
     get fullName(): string {
@@ -51,7 +51,7 @@
     }
 
     get age(): number {
-      return this.internalAge;
+      return this._age;
     }
 
     set age(num: number) {
@@ -59,7 +59,7 @@
         throw new Error("age should be greater than 0");
       }
 
-      this.internalAge = num;
+      this._age = num;
     }
   }
 }
