@@ -8,7 +8,13 @@
     makeCoffee(shots: number): CoffeeCup;
   }
 
-  class CoffeeMachine implements CoffeeMaker {
+  interface CommercialCoffeMaker {
+    makeCoffee(shots: number): CoffeeCup;
+    fillCoffeeBeans(beans: number): void;
+    clean(): void;
+  }
+
+  class CoffeeMachine implements CoffeeMaker, CommercialCoffeMaker {
     private static BEANS_GRAM_PER_SHOT: number = 7;
     private coffeeBeans: number;
 
@@ -49,13 +55,35 @@
       this.preheat();
       return this.extract(shots);
     }
+
+    clean() {
+      console.log("cleaning thw machine... 🫧");
+    }
+  }
+
+  class AmateurUser {
+    // 인터페이스에 규약된 좁은 범위만 지원
+    constructor(private machine: CoffeeMaker) {}
+    makeCoffee() {
+      const coffee = this.machine.makeCoffee(2);
+      console.log(coffee);
+    }
+  }
+
+  class ProBarista {
+    // 인터페이스에 규약된 좁은 범위만 지원
+    constructor(private machine: CommercialCoffeMaker) {}
+    makeCoffee() {
+      const coffee = this.machine.makeCoffee(2);
+      console.log(coffee);
+      this.machine.fillCoffeeBeans(45);
+      this.machine.clean();
+    }
   }
 
   const coffeeMachine: CoffeeMachine = new CoffeeMachine(100);
-  coffeeMachine.fillCoffeeBeans(30);
-  coffeeMachine.makeCoffee(2);
-
-  const coffeeMachine2: CoffeeMaker = new CoffeeMachine(100);
-  coffeeMachine2.fillCoffeeBeans(30);
-  coffeeMachine2.makeCoffee(2);
+  const amatuer = new AmateurUser(coffeeMachine);
+  const pro = new ProBarista(coffeeMachine);
+  amatuer.makeCoffee();
+  pro.makeCoffee();
 }
