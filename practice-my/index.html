@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="assets/styles/main.css" />
+    <script defer src="build/main.js"></script>
+    <title>Motion</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">MOTION</h1>
+        <ul class="list_controller">
+          <li class="item_controller">
+            <button class="btn">IMAGE</button>
+          </li>
+          <li class="item_controller">
+            <button class="btn">VIDEO</button>
+          </li>
+          <li class="item_controller">
+            <button class="btn">NOTE</button>
+          </li>
+          <li class="item_controller">
+            <button class="btn">TASK</button>
+          </li>
+        </ul>
+      </header>
+      <main class="main">
+        <ul class="list">
+          <li class="item media">
+            <img
+              width="320px"
+              height="180px"
+              class="image"
+              src="https://picsum.photos/200"
+              alt="0"
+            />
+            <p class="description">Image</p>
+            <button class="btn_close">x</button>
+          </li>
+          <li class="item media">
+            <iframe
+              width="320px"
+              height="180px"
+              src="https://www.youtube.com/embed/bxDLfizVXDI?si=FLtYVweieI6PcEyV"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <p class="description">video</p>
+            <button class="btn_close">x</button>
+          </li>
+          <li class="item text">
+            <div class="title">Note</div>
+            <div class="description">Note Body</div>
+            <button class="btn_close">x</button>
+          </li>
+          <li class="item text">
+            <div class="title">Todo</div>
+            <div class="description">Must do</div>
+            <button class="btn_close">x</button>
+          </li>
+        </ul>
+      </main>
+
+      <footer class="footer">
+        © Copyright by Wslee94, All right reserved.
+      </footer>
+    </div>
+  </body>
+</html>

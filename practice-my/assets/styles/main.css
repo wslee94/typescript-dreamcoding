@@ -1,0 +1,134 @@
+@import url("reset.css");
+
+:root {
+  --bg-main-color: #00000080;
+  --bg-accent-color: #2d2d2d;
+  --accent-color: #f64435;
+  --text-accent-color: #ffe498;
+  --text-edit-bg-color: #575757;
+  --border-color: #3f3f3f;
+  --shadow-color: #202020;
+  --document-bg-color: #68686850;
+  --component-bg-gradient: radial-gradient(
+    circle,
+    #646464e6 0%,
+    #363636e6 100%
+  );
+  --smokywhite: #dddbd8;
+  --black: #000000;
+  --translucent-black: #00000099;
+}
+
+body {
+  background-image: url(../images/background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+}
+
+.header {
+  background: var(--bg-main-color);
+  padding: 20px 0;
+}
+
+.header .title {
+  font-size: 32px;
+  color: var(--accent-color);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.header .list_controller {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.header .btn {
+  padding: 5px 10px;
+  background-color: var(--accent-color);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.main {
+  height: 100%;
+  padding: 20px 0;
+  background: var(--bg-accent-color);
+  opacity: 0.7;
+  height: 700px;
+  overflow-y: auto;
+}
+
+.main .list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main .item {
+  position: relative;
+  margin: 0 20px;
+  box-shadow: 2px 2px 2px var(--shadow-color);
+  border: var(--border-color);
+  background: var(--document-bg-color);
+}
+
+.main .item.media {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.main .item.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main .title {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-accent-color);
+  padding: 10px;
+}
+
+.main .description {
+  font-size: 16px;
+  color: var(--smokywhite);
+  padding: 10px;
+}
+
+.main .btn_close {
+  width: 20px;
+  height: 20px;
+  background: none;
+  font-weight: bold;
+  color: var(--accent-color);
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  background: var(--black);
+}
